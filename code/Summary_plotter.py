@@ -1,7 +1,7 @@
 from __future__ import division
 import sys
 
-def Summary_plotter(input_vcf_path, switches = 111, sort = True):
+def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
     
     """
     Summary plotter plots some standard metrics for a dataset. Plots missing data per sample, coverage per sample and heterozygosity Vs. coverage accross samples and loci. 
