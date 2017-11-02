@@ -1,5 +1,7 @@
 from __future__ import division
 import sys
+import matplotlib
+matplotlib.use("Agg")  ## if plotting on a cluster
 
 def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
     
@@ -7,7 +9,7 @@ def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
     Summary plotter plots some standard metrics for a dataset. Plots missing data per sample, coverage per sample and heterozygosity Vs. coverage accross samples and loci. 
     
     input_vcf_path = full path to vcf
-    switches = vector of four 0 or 1 switches for the missing data, coverage and heterozygosity plots in that order. Example: "1101".
+    switches = vector of four 0 or 1 switches for the missing data, coverage, heterozygosity and cov Vs. Het plots in that order. Example: "1101".
     sort = True or False - whether to sort the samples by the plotted metric (True), or keep order in vcf (False)
     """
     
