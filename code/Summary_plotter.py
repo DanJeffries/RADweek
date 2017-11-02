@@ -105,6 +105,9 @@ def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
     
     fig = plt.figure(figsize = (30,70))  
 
+    if not is.instance(switches, str):
+        str(switches)
+    
     
     if switches[0] == "1": ## make the missing data plot
         
@@ -258,7 +261,8 @@ def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
             vio["cmeans"].set_color("black")
             
             vio_pos += 1
-            
+        
+        plt.ylim(0, 4*(np.std(per_sample_coverage[sample])))
         plt.xticks(x_tick_pos, x_tick_labs, rotation = 90)
         plt.title("Locus coverage per sample")
     
