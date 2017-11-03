@@ -23,15 +23,18 @@ def VCF_to_FASTA(vcf_path, cat_path):
     
     print "\nGetting tag numbers"
 
-    tag_count = 0
     for i in myvcf.readlines():
         if not i.startswith("#"):
-            to_keep.append(i.split()[2])
-            tag_count += 1
-    print "\nThere are %s tags in your VCF" % tag_count
+            tag_ID = i.split()[2].split("_")[0]
+            if tag_ID not in to_keep:
+                to_keep.append(tag_ID)
 
+            
+    to_keep = set(to_keep)
+    print "\nThere are %s tags in your VCF" % len(to_keep)
+    
     print "\nGetting sequences. . . gimme a minute . . ."
-
+    
     for line in my_catalog.readlines():
         if not line.startswith("#"):
             if line.split()[2] in to_keep:
