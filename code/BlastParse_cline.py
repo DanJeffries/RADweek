@@ -10,7 +10,7 @@ def BlastParseExtra(infile, genome_fa, best_hit_criteria, Eval_thresh, get_frags
     <Eval_thresh>       -  e-value threshold for unique alignments
     <get_frags_switch>  -  switch (1 = on, 0 = off) for getting fragments around the mapping
     <window_size>       -  size of the window (in bp) around the mapping coordinates used to extract the subject scaffold segment 
-    <verb>              -  make it chatty
+    <verb>              -  (switch, 0 or 1) to make it chatty
 
     This script first filters the mappings in the <blast_xml_output> for uniq hits with evalues better than
     <Eval_thresh> or for multi hits where the best hit is <best_hit_criteria> orders of magnitude better than 
