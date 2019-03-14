@@ -105,7 +105,7 @@ def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
     
     fig = plt.figure(figsize = (30,70))  
 
-    if not is.instance(switches, str):
+    if not isinstance(switches, str):
         str(switches)
     
     
@@ -289,7 +289,7 @@ def Summary_plotter(input_vcf_path, switches = "1111", sort = True):
                 N_called = 1
             
             ax4.scatter(per_sample_heterozygosity[sample]/N_called, per_sample_coverage_means[sample], color = "black")
-            ax4.text((per_sample_heterozygosity[sample]/N_called)+0.002, per_sample_coverage_means[sample], sample[:10])
+            ax4.text((per_sample_heterozygosity[sample]/N_called), per_sample_coverage_means[sample], sample[:10])
             
         plt.ylabel("Coverage (reads)")
         plt.xlabel("Prop. heterozygous loci")
